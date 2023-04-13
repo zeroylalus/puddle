@@ -7,10 +7,11 @@
 </head>
 <body>
     <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
-        <a class="text-xl font-semibold" href="{% url 'index' %}">Puddle</a>
+        <a class="text-xl font-semibold" href="{% url 'core:index' %}">Puddle</a>
         <div class="space-x-6">
-            <a class="text-lg font-semibold hover:text-gray-500" href="{% url 'contact' %}">Contact</a>
+            <a class="text-lg font-semibold hover:text-gray-500" href="{% url 'core:contact' %}">Contact</a>
             <a class="text-lg font-semibold hover:text-gray-500" href="#">Browse</a>
+            <a class="text-lg font-semibold hover:text-gray-500" href="/admin/">Admin</a>
             <a class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-500" href="#">Sign up</a>
             <a class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-500" href="#">Log in</a>
         </div>
@@ -28,7 +29,7 @@
             <h3 class="mb-5 font-semibold text-gray-400">Ménu:</h3>
             <ul class="space-y-2">
                 <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">About</a></li>
-                <li><a href="{% url 'contact' %}" class="text-lg text-teal-500 hover:text-teal-700">Contact</a></li>
+                <li><a href="{% url 'core:contact' %}" class="text-lg text-teal-500 hover:text-teal-700">Contact</a></li>
                 <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">Privacy policy</a></li>
                 <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">Terms of use</a></li>
             </ul>
