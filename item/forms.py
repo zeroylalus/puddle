@@ -1,11 +1,11 @@
 from django import forms
-from . import models
+from .models import Item
 
 INPUT_CLASSES = 'w-full py-4 px-6 rounded-xl border'
 
 class NewItemForm(forms.ModelForm):
     class Meta:
-        model = models.Item
+        model = Item
         fields = ('category', 'name', 'description', 'price', 'image')
         widgets = {
             'category': forms.Select(attrs={
@@ -27,7 +27,7 @@ class NewItemForm(forms.ModelForm):
 
 class EditItemForm(forms.ModelForm):
     class Meta:
-        model = models.Item
+        model = Item
         fields = ('name', 'description', 'price', 'image', 'is_sold')
         widgets = {
             'name': forms.TextInput(attrs={

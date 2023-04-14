@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from item import models
-from . import forms
+from item.models import Item, Category
+from .forms import SignupForm
 
 def index(request):
-    items = models.Item.objects.filter(is_sold=False)[0:6]
-    categories = models.Category.objects.all()
+    items = Item.objects.filter(is_sold=False)[0:6]
+    categories = Category.objects.all()
     return render(request,'core/index.html',{
         'categories': categories,
         'items': items,
@@ -15,12 +15,12 @@ def contact(request):
 
 def singup(request):
     if request.method == 'POST':
-        form = forms.SignupForm(request.POST)
+        form = SignupForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/login/')
     else:
-        form = forms.SignupForm()
+        form = SignupForm()
         return render(request,'core/singup.html',{
             'form': form
         })
