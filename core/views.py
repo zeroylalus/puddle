@@ -21,6 +21,6 @@ def singup(request):
             return redirect('/login/')
     else:
         form = forms.SignupForm()
-    return render(request,'core/singup.html',{
-        'form': form
-    })
+        return render(request,'core/singup.html',{
+            'form': form
+        })
